@@ -9,7 +9,7 @@ const PageHeader = (props) => {
   return (
     <header>
       <Col className='header-main'>
-        <h1>Cukiernia Lukier</h1>
+        <h1>Confectionery Lukier</h1>
         <Navbar expand="sm" className='d-flex justify-content-center '>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -17,6 +17,7 @@ const PageHeader = (props) => {
               <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/link">Link</Nav.Link>
               <Nav.Link href="/contact">Contact</Nav.Link>
+              <Nav.Link href="/history">History</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Container>
         <PageHeader />
+        <Home />
       </Container>
     </div>
   );
