@@ -2,6 +2,7 @@ const sqlite3 = require('sqlite3')
 const express = require('express')
 const app = express()
 const db = new sqlite3.Database(('./public/db/database.db'))
+const fs = require('fs')
 
 app.use(express.static('public'))
 
@@ -25,10 +26,26 @@ app.get('/api/cakes/:id', (req, res) => {
     (err, row) => {
       if (err)
         throw err
-      
+
       res.send(row)
     }
   )
+})
+
+app.get('/api/img/:id', (req, res) => {
+  const cakeId = req.params.id
+  const s = fs.createReadStream(`./public/img/${cakeId.toUpperCase()}.jpg`)
+
+  s.on('error', () => {
+    s.close()
+    res.sendStatus(404)
+  })
+
+  s.on('open', () => {
+    res.set('Content-Type', 'image/jpeg')
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    s.pipe(res)
+  })
 })
 
 const server = app.listen(8081, () => {

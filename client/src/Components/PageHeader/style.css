@@ -19,3 +19,7 @@
   color: rgb(247, 78, 78);
   filter: brightness(0.8);
 }
+
+#page-title {
+  font-size: 64px;
+}
