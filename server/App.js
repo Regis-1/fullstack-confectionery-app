@@ -7,6 +7,7 @@ const fs = require('fs')
 app.use(express.static('public'))
 
 app.get('/api/cakes', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
   db.all(
     `select * from CAKES`,
     [],
@@ -19,9 +20,14 @@ app.get('/api/cakes', (req, res) => {
   )
 })
 
+app.get('/api/cakes/ids', (req, res) =>{
+  res.setHeader('Access-Control-Allow-Origin', '*')
+})
+
 app.get('/api/cakes/:id', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
   db.get(
-    `select * from CAKES where cake_id = "${req.params.id}"`,
+    `select * from CAKES where cake_id = "${req.params.id.toUpperCase()}"`,
     [],
     (err, row) => {
       if (err)
@@ -33,17 +39,16 @@ app.get('/api/cakes/:id', (req, res) => {
 })
 
 app.get('/api/img/:id', (req, res) => {
-  const cakeId = req.params.id
-  const s = fs.createReadStream(`./public/img/${cakeId.toUpperCase()}.jpg`)
-
+  const s = fs.createReadStream(`./public/img/${req.params.id.toUpperCase()}.jpg`)
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  
   s.on('error', () => {
     s.close()
     res.sendStatus(404)
   })
-
+  
   s.on('open', () => {
     res.set('Content-Type', 'image/jpeg')
-    res.setHeader('Access-Control-Allow-Origin', '*')
     s.pipe(res)
   })
 })
