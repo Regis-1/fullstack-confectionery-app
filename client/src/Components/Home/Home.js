@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 import useRandomImage from '../../Hooks/useRandomCake'
 import './style.css'
