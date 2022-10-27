@@ -1,0 +1,17 @@
+.cake-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  display: flex;
+}
+
+.cake-card img {
+  border-radius: 15px;
+  margin-right: 10px;
+  border: 1px solid rgb(247, 78, 78);
+}
+
+.info {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}

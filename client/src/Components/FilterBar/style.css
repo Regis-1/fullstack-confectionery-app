@@ -1,9 +1,16 @@
 #filter-bar {
-  background-color: cyan;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   min-width: 100%;
   padding: 10px;
-  box-shadow: 4px 4px 8px black;
   margin-bottom: 20px;
+}
+
+.col-range {
+  display: flex;
+  flex-flow: row;
+}
+
+h3:first-child {
+  margin-right: 6px;
 }
