@@ -12,10 +12,6 @@ const CakesCatalog = (props) => {
   const [allCakes, setAllCakes] = useState([]);
   const [filteredCakes, setFilteredCakes] = useState([])
 
-  const filterBarOnChange = () => {
-    
-  }
-
   useEffect(() => {
     const fetchAllCakes = async (baseUrl) => {
       const cakes = await (await fetch(`${baseUrl}/cakes`)).json()
@@ -36,18 +32,20 @@ const CakesCatalog = (props) => {
   }, [])
 
   return (
-    <Container id="catalog-container">
-      <Col>
-        <FilterBar />
-        <Row className='g-2'>
-          {filteredCakes.map(item => {
-            return (
-              <CakeCard key={item.info.cake_id} cake={item} />
-            )
-          })}
-        </Row>
-      </Col>
-    </Container>
+    <section>
+      <Container id="catalog-container">
+        <Col>
+          <FilterBar cakes={allCakes} filteredSetter={setFilteredCakes} />
+          <Row className='g-2'>
+            {filteredCakes.map(item => {
+              return (
+                <CakeCard key={item.info.cake_id} cake={item} />
+              )
+            })}
+          </Row>
+        </Col>
+      </Container>
+    </section>
   )
 }
 
