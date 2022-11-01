@@ -9,6 +9,10 @@
 #contact-container article {
   text-align: center;
   margin-bottom: 20px;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 #map {
