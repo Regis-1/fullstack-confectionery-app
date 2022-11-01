@@ -15,3 +15,16 @@
   flex-flow: column;
   justify-content: space-between;
 }
+
+a {
+  text-decoration: none;
+  color: rgb(247, 78, 78);
+}
+
+a:hover {
+  color: rgb(247, 78, 78);
+}
+
+.cake-card:hover {
+  box-shadow: 0px 0px 12px rgb(247, 78, 78);
+}

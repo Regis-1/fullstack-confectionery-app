@@ -5,3 +5,12 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+#history-container p {
+  font-size: larger;
+  text-align: justify;
+}
+
+#history-container img {
+  border-radius: 15px;
+}

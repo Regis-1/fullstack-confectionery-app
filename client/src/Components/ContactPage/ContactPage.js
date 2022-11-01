@@ -15,8 +15,7 @@ const ContactPage = () => {
               <h2><u>Our address:</u></h2>
               <h4>Mail: lukier.sweets@gmail.com</h4>
               <h4>Phone: 898 243 332</h4>
-              <br />
-              <h4><u>Confectionery address:</u></h4>
+              <h2><u>Confectionery address:</u></h2>
               <h4>ul. Sztabowa 35</h4>
               <h4>53-407 Wrocław</h4>
             </article>

@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 const cakesController = require('./Controllers/CakesController')
+const employeesController = require('./Controllers/EmployeesController')
 
 app.use(express.static('public'))
 
@@ -12,6 +13,8 @@ app.get('/api/cakes/ids', cakesController.getAllId)
 app.get('/api/cakes/:id', cakesController.getById)
 
 app.get('/api/img/:id', cakesController.getImgById)
+
+app.get('/api/employees/:id', employeesController.getById)
 
 const server = app.listen(8081, () => {
   const host = server.address().address

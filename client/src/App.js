@@ -7,6 +7,7 @@ import './App.css';
 import PageHeader from './Components/PageHeader'
 import Home from './Components/Home'
 import CakesCatalog from './Components/CakesCatalog'
+import CakeDetails from './Components/CakeDetails';
 import ContactPage from './Components/ContactPage';
 import HistoryPage from './Components/HistoryPage';
 
@@ -22,6 +23,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/catalog' element={<CakesCatalog />} />
+              <Route path='/catalog/:id' element={<CakeDetails />} />
               <Route path='/contact' element={<ContactPage />} />
               <Route path='/history' element={<HistoryPage />} />
             </Routes>
